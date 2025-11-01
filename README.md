@@ -1,126 +1,159 @@
-✈️ AeroSense AI — README (versão melhorada & ousada)
+# ✈️ **AeroSense AI** — Flight Intelligence Dashboard
+![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python)
+![Streamlit](https://img.shields.io/badge/Streamlit-1.x-FF4B4B?logo=streamlit&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-green)
+![Conda](https://img.shields.io/badge/Conda-Env-blue?logo=anaconda)
+![Status](https://img.shields.io/badge/Status-Active-success?style=flat-square)
 
-Visão rápida: AeroSense AI é um dashboard de operações aéreas impulsionado por IA — otimiza horários de voo, prevê atrasos e reduz impactos em cascata em aeroportos congestionados. Este README foi reescrito para ficar direto, moderno e com paths corrigidos para o fluxo de uso mostrado na sua captura (ambiente flight-env, pasta AeroSense AI no Desktop, execução em app/).
+Visão rápida:
+O AeroSense AI é um dashboard de operações aéreas impulsionado por Inteligência Artificial, projetado para otimizar horários de voo, prever atrasos e reduzir impactos em cascata em aeroportos congestionados.
+Combina Machine Learning, NLP e otimização avançada em uma interface Streamlit moderna e interativa.
 
-🎯 O que é
+---
 
-AeroSense AI é uma aplicação Streamlit que reúne ML, otimização e NLP para dar ao time operacional uma visão proativa das janelas de operação, previsão de atrasos e recomendações de remanejamento de slots.
+### 🧭 Visão Geral
+**AeroSense AI** é um dashboard de operações aéreas impulsionado por **Inteligência Artificial**, projetado para **otimizar horários de voo**, **prever atrasos** e **reduzir impactos em cascata** em aeroportos congestionados.  
+Combina **Machine Learning, NLP e algoritmos de otimização** em uma interface **Streamlit** moderna, visual e interativa.
 
-🚀 Funcionalidades principais
+---
 
-Transformação de dados automática (CSV/XLSX → formato canônico)
+## 🎯 O que é
+O **AeroSense AI** ajuda times operacionais e analistas a tomarem decisões proativas e baseadas em dados, através de:
 
-Predição de atrasos com modelos ML treináveis
+- 📊 Análises preditivas de atrasos e gargalos.  
+- ⚙️ Reprogramação automática de voos com base em restrições reais.  
+- ✈️ Simulação de impacto entre conexões e slots.
 
-Otimização de horários para minimizar congestionamento e atrasos em cascata
+---
 
-Análise de impacto em cascata (quais voos afetam mais outros voos)
+## 🚀 Funcionalidades Principais
+- ✅ Transformação automática de dados (CSV/XLSX → formato padronizado)  
+- ✅ Predição de atrasos com modelos de Machine Learning  
+- ✅ Otimização de horários de voo para reduzir congestionamentos  
+- ✅ Análise de impacto em cascata (efeito dominó entre voos)  
+- ✅ Planejamento de pista e uso eficiente da infraestrutura  
+- ✅ Interface NLP para consultas em linguagem natural  
+- ✅ Dashboard interativo e intuitivo, feito com Streamlit
 
-Utilização de pistas (runway planning / capacity)
+---
 
-Interface NLP para consultas operacionais (pergunte em linguagem natural)
+## 🧰 Requisitos
+- 🐍 **Python:** 3.10 ou superior  
+- 🧩 **Conda:** recomendado  
+- 💻 **RAM:** mínimo 4 GB (8 GB recomendado)  
+- 🪟 **Compatível com:** Windows / macOS / Linux
 
-Dashboard interativo construído com Streamlit
+---
 
-🧰 Requisitos
-
-Python 3.10+
-
-Conda (recomendado)
-
-4 GB RAM mínimo (8 GB recomendado para datasets grandes)
-
-Windows / macOS / Linux
-
-📁 Estrutura do projeto (atualizada)
-AeroSense AI/
-├── app/
-│   ├── main.py                 # Main Streamlit application
-│   └── main_updated.py         # Updated version with enhancements
-├── src/
-│   ├── data_processor.py       # Data processing and transformation
-│   ├── optimizer.py            # Schedule optimization algorithms
-│   ├── predictor.py            # ML models for delay prediction
-│   ├── anomaly_detector.py     # Anomaly detection in flight patterns
-│   ├── peak_time_analyzer.py   # Peak time analysis
-│   ├── cascade_delay_predictor.py  # Cascade delay analysis
-│   ├── nlp_query_processor.py  # Natural language query processing
-│   └── advanced_optimizer.py   # Advanced optimization algorithms
-├── data/
-│   ├── flight_schedule_data.csv    # Sample flight data
-│   ├── optimized_schedule.csv      # Optimized schedule output
-│   └── Flight_Data.xlsx            # Sample Excel data
-├── notebooks/
-│   └── flight_analysis.ipynb       # Jupyter notebook for analysis
-├── docs/
+## 📁 Estrutura do Projeto (atualizada)
+```bash
+📦 AeroSense-AI
+├── 📂 app/
+│   ├── main.py — Entrada do Streamlit
+│   └── main_updated.py — Versão com melhorias
+├── 📂 src/
+│   ├── data_processor.py — Processamento e transformação de dados
+│   ├── optimizer.py — Algoritmos de otimização de horários
+│   ├── predictor.py — Modelos de ML para previsão de atrasos
+│   ├── anomaly_detector.py — Detecção de anomalias em padrões de voo
+│   ├── peak_time_analyzer.py — Análise de horários de pico
+│   ├── cascade_delay_predictor.py — Análise de atrasos em cascata
+│   ├── nlp_query_processor.py — Processamento de linguagem natural
+│   └── advanced_optimizer.py — Algoritmos avançados de otimização
+├── 📂 data/
+│   ├── flight_schedule_data.csv — Dados de voo (amostra)
+│   ├── optimized_schedule.csv — Saída otimizada
+│   └── Flight_Data.xlsx — Dados em Excel
+├── 📂 notebooks/
+│   └── flight_analysis.ipynb — Análises exploratórias
+├── 📂 docs/
 │   ├── flight_radar_integration.md
 │   └── openai_setup.md
-├── requirements.txt                 # Python dependencies
-├── .env.example                     # Environment variables template
-└── README.md                        # Este arquivo
+├── requirements.txt — Dependências
+├── .env.example — Template de variáveis de ambiente
+└── README.md — Este arquivo ✈️
+```
+⚡ Inicialização Rápida (via Conda / Windows)
 
-⚡ Inicialização rápida (modo recomendado — Conda / Windows)
+Use o Anaconda Prompt e siga os passos abaixo:
 
-Use o Anaconda Prompt (ou terminal no Windows) e siga estes passos exatos — refletem o que aparece na sua imagem:
-
-# 1) (Opcional) clonar o repositório
-git clone <URL-do-seu-repo> "AeroSense AI"
+1️⃣ Clonar o repositório
+```bash
+git clone https://github.com/Pauloswimming/AeroSense-AI.git
 cd "AeroSense AI"
+```
 
-# 2) criar e ativar o ambiente (igual ao da sua imagem)
+2️⃣ Criar e ativar o ambiente Conda
+```
 conda create --name flight-env python=3.10 -y
 conda activate flight-env
+```
 
-# 3) instalar dependências (execute no diretório raiz do projeto)
+3️⃣ Instalar dependências
+```
 pip install -r requirements.txt
+```
 
-# 4) navegar até a pasta da app e iniciar o Streamlit (como na sua captura)
-cd "AeroSense AI"         # se já estiver aqui, pule
+4️⃣ Executar o app Streamlit
+```bash
 cd app
 streamlit run main.py
+```
 
-Exemplo do terminal (mesma sequência da sua imagem)
+Exemplo no terminal:
+```bash
 (base) C:\Users\SONY VAIO>conda activate flight-env
-(flight-env) C:\Users\SONY VAIO>cd Desktop/"AeroSense AI"
+(flight-env) C:\Users\SONY VAIO>cd Desktop\AeroSense AI
 (flight-env) C:\Users\SONY VAIO\Desktop\AeroSense AI>cd app
 (flight-env) C:\Users\SONY VAIO\Desktop\AeroSense AI\app>streamlit run main.py
+```
+🔑 Variáveis de Ambiente
 
-🔑 Variáveis de ambiente
-
-Crie um arquivo .env na raiz (AeroSense AI/.env) com as chaves necessárias. Exemplo:
-
+Crie um arquivo .env na raiz do projeto e adicione suas chaves (não comite esse arquivo):
+```
 GEMINI_API_KEY=seu_gemini_api_key_aqui
-OPENAI_API_KEY=seu_openai_api_key_aqui   # opcional
+OPENAI_API_KEY=seu_openai_api_key_aqui  # opcional
 OUTROS_SEGREDOS=valor
+```
 
+Use .env.example como referência.
 
-(use .env.example como referência)
+🧩 Dicas e Soluções Rápidas
 
-✅ Dicas rápidas e troubleshooting (se algo falhar)
+⚠️ Erro “streamlit not found” → pip install streamlit no ambiente flight-env.
 
-Streamlit não encontrado → certifique-se de ter instalado streamlit no flight-env:
-pip install streamlit
+🧠 Versão incorreta do Python → python --version.
 
-Erro de versão do Python → confirme python --version dentro do env flight-env.
+🌐 App não abriu automaticamente → acesse http://localhost:8501.
 
-Se o app não abrir no browser → abra manualmente http://localhost:8501.
+🔄 Ambiente corrompido → recrie com:
+```
+conda remove -n flight-env --all
+conda create -n flight-env python=3.10
+```
+🧪 Execução em Linux / macOS (atalho único)
+```
+git clone https://github.com/Pauloswimming/AeroSense-AI.git && cd "AeroSense AI" &&
+conda create -n flight-env python=3.10 -y && conda activate flight-env &&
+pip install -r requirements.txt && cd app && streamlit run main.py
+```
+📊 Como Usar o Dashboard
 
-Dependências conflitantes → recrie o ambiente: conda remove -n flight-env --all e refaça os passos.
+📂 Upload Data — carregue CSV/XLSX pela barra lateral.
 
-Se estiver usando macOS/Linux, troque cd Desktop/"AeroSense AI" por cd ~/Desktop/AeroSense\ AI ou o caminho onde clonou o repo.
+⚙️ Optimization & AI — rode o pipeline de otimização e previsão.
 
-🧪 Executando em Linux / macOS (atalho)
-git clone <URL-do-repo> "AeroSense AI" && cd "AeroSense AI"
-conda create -n flight-env python=3.10 -y && conda activate flight-env
-pip install -r requirements.txt
-cd app && streamlit run main.py
+💬 Query (NLP) — pergunte ao sistema: “Quais são os horários de pico amanhã?”
 
-📚 Como usar o dashboard
+📈 Visualize — painéis interativos mostram previsões, gargalos e recomendações.
 
-Upload Data — carregue CSV/XLSX pela barra lateral.
+🌟 Contribuições
 
-Optimization & AI — rode o pipeline de pré-processamento e otimização.
+Pull Requests são bem-vindos!
+Fluxo sugerido:
 
-Query (NLP) — pergunte ao sistema em linguagem natural (ex.: “quais são os horários de pico amanhã?”).
+Fork → 2. git checkout -b feature-nome → 3. Commit & Push → 4. Abra PR.
 
-Visualize — painéis interativos mostrarão janelas críticas, previsões e recomendações.
+🧑‍💻 Autor
+
+👨‍💻 Paulo Henrique Rodrigues Nogueira
