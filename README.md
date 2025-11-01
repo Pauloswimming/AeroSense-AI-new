@@ -1,273 +1,126 @@
+✈️ AeroSense AI — README (versão melhorada & ousada)
 
-# ✈️ Flight Schedule Optimization System
+Visão rápida: AeroSense AI é um dashboard de operações aéreas impulsionado por IA — otimiza horários de voo, prevê atrasos e reduz impactos em cascata em aeroportos congestionados. Este README foi reescrito para ficar direto, moderno e com paths corrigidos para o fluxo de uso mostrado na sua captura (ambiente flight-env, pasta AeroSense AI no Desktop, execução em app/).
 
-An AI-powered airline operations management dashboard designed to optimize flight schedules at busy airports like Mumbai (BOM) and Delhi (DEL). This system helps operations teams identify optimal time slots, predict delays, and minimize cascading impacts through intelligent scheduling.
+🎯 O que é
 
-![Python](https://img.shields.io/badge/python-v3.10+-blue.svg)
-![Streamlit](https://img.shields.io/badge/streamlit-v1.25+-red.svg)
-![License](https://img.shields.io/badge/license-MIT-green.svg)
+AeroSense AI é uma aplicação Streamlit que reúne ML, otimização e NLP para dar ao time operacional uma visão proativa das janelas de operação, previsão de atrasos e recomendações de remanejamento de slots.
 
-## 🎯 Problem Statement
+🚀 Funcionalidades principais
 
-Due to capacity limitations and heavy passenger load, flight operations at busy airports are becoming a scheduling nightmare. Controllers and operators need to find efficiency in scheduling within system constraints and find means to de-congest flight traffic.
+Transformação de dados automática (CSV/XLSX → formato canônico)
 
-## 🚀 Features
+Predição de atrasos com modelos ML treináveis
 
-- **Intelligent Data Transformer**: Auto-normalizes uploaded Excel/CSV files into standardized format
-- **AI-Powered Analytics**: Real-time insights using Google Gemini AI integration
-- **Delay Prediction**: Machine learning models for predicting flight delays
-- **Schedule Optimization**: Recommends optimal time slots to reduce congestion
-- **Cascade Impact Analysis**: Identifies flights with highest cascading delay impact
-- **Runway Utilization**: Optimizes runway capacity and usage patterns
-- **NLP Query Interface**: Natural language processing for operational queries
-- **Interactive Dashboard**: Comprehensive Streamlit-based visualization
+Otimização de horários para minimizar congestionamento e atrasos em cascata
 
-## 📋 Requirements
+Análise de impacto em cascata (quais voos afetam mais outros voos)
 
-- **Python**: 3.10 or higher
-- **Operating System**: Windows / macOS / Linux
-- **Package Manager**: pip
-- **Memory**: 4GB RAM minimum (8GB recommended for large datasets)
+Utilização de pistas (runway planning / capacity)
 
-## 🏗️ Project Structure
+Interface NLP para consultas operacionais (pergunte em linguagem natural)
 
-```
-Flight-Schedule-Optimization/
+Dashboard interativo construído com Streamlit
+
+🧰 Requisitos
+
+Python 3.10+
+
+Conda (recomendado)
+
+4 GB RAM mínimo (8 GB recomendado para datasets grandes)
+
+Windows / macOS / Linux
+
+📁 Estrutura do projeto (atualizada)
+AeroSense AI/
 ├── app/
 │   ├── main.py                 # Main Streamlit application
 │   └── main_updated.py         # Updated version with enhancements
 ├── src/
 │   ├── data_processor.py       # Data processing and transformation
-│   ├── optimizer.py           # Schedule optimization algorithms
-│   ├── predictor.py           # ML models for delay prediction
-│   ├── anomaly_detector.py    # Anomaly detection in flight patterns
-│   ├── peak_time_analyzer.py  # Peak time analysis
+│   ├── optimizer.py            # Schedule optimization algorithms
+│   ├── predictor.py            # ML models for delay prediction
+│   ├── anomaly_detector.py     # Anomaly detection in flight patterns
+│   ├── peak_time_analyzer.py   # Peak time analysis
 │   ├── cascade_delay_predictor.py  # Cascade delay analysis
-│   ├── nlp_query_processor.py # Natural language query processing
-│   └── advanced_optimizer.py  # Advanced optimization algorithms
+│   ├── nlp_query_processor.py  # Natural language query processing
+│   └── advanced_optimizer.py   # Advanced optimization algorithms
 ├── data/
 │   ├── flight_schedule_data.csv    # Sample flight data
 │   ├── optimized_schedule.csv      # Optimized schedule output
-│   └── Flight_Data.xlsx           # Sample Excel data
+│   └── Flight_Data.xlsx            # Sample Excel data
 ├── notebooks/
-│   └── flight_analysis.ipynb     # Jupyter notebook for analysis
+│   └── flight_analysis.ipynb       # Jupyter notebook for analysis
 ├── docs/
 │   ├── flight_radar_integration.md
 │   └── openai_setup.md
-├── requirements.txt              # Python dependencies
-├── .env.example                 # Environment variables template
-└── README.md                   # This file
-```
+├── requirements.txt                 # Python dependencies
+├── .env.example                     # Environment variables template
+└── README.md                        # Este arquivo
 
-## ⚡ Quick Start
+⚡ Inicialização rápida (modo recomendado — Conda / Windows)
 
-### 1. Clone the Repository
+Use o Anaconda Prompt (ou terminal no Windows) e siga estes passos exatos — refletem o que aparece na sua imagem:
 
-```bash
-git clone https://github.com/monu808/Flight-Schedule-Optimization.git
-cd Flight-Schedule-Optimization
-```
+# 1) (Opcional) clonar o repositório
+git clone <URL-do-seu-repo> "AeroSense AI"
+cd "AeroSense AI"
 
-### 2. Set Up Virtual Environment
+# 2) criar e ativar o ambiente (igual ao da sua imagem)
+conda create --name flight-env python=3.10 -y
+conda activate flight-env
 
-**Windows (PowerShell):**
-```powershell
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-```
-
-**macOS/Linux:**
-```bash
-python -m venv .venv
-source .venv/bin/activate
-```
-
-### 3. Install Dependencies
-
-```bash
+# 3) instalar dependências (execute no diretório raiz do projeto)
 pip install -r requirements.txt
-```
 
-### 4. Configure Environment Variables
+# 4) navegar até a pasta da app e iniciar o Streamlit (como na sua captura)
+cd "AeroSense AI"         # se já estiver aqui, pule
+cd app
+streamlit run main.py
 
-Create a `.env` file in the root directory:
+Exemplo do terminal (mesma sequência da sua imagem)
+(base) C:\Users\SONY VAIO>conda activate flight-env
+(flight-env) C:\Users\SONY VAIO>cd Desktop/"AeroSense AI"
+(flight-env) C:\Users\SONY VAIO\Desktop\AeroSense AI>cd app
+(flight-env) C:\Users\SONY VAIO\Desktop\AeroSense AI\app>streamlit run main.py
 
-```env
-GEMINI_API_KEY=your_gemini_api_key_here
-OPENAI_API_KEY=your_openai_api_key_here  # Optional
-TIME_SLOT_DURATION=15
-MIN_TURNAROUND_TIME=45
-RUNWAY_09R_27L_CAPACITY=30
-RUNWAY_09L_27R_CAPACITY=30
-RUNWAY_14_32_CAPACITY=25
-```
+🔑 Variáveis de ambiente
 
-### 5. Run the Application
+Crie um arquivo .env na raiz (AeroSense AI/.env) com as chaves necessárias. Exemplo:
 
-```bash
-streamlit run app/main.py
-```
+GEMINI_API_KEY=seu_gemini_api_key_aqui
+OPENAI_API_KEY=seu_openai_api_key_aqui   # opcional
+OUTROS_SEGREDOS=valor
 
-The application will open in your browser at [http://localhost:8501](http://localhost:8501)
 
-## 📊 Data Format & Intelligent Transformer
+(use .env.example como referência)
 
-### Expected Data Format
+✅ Dicas rápidas e troubleshooting (se algo falhar)
 
-The application expects flight schedule data with the following columns:
+Streamlit não encontrado → certifique-se de ter instalado streamlit no flight-env:
+pip install streamlit
 
-| Column | Type | Required | Description |
-|--------|------|----------|-------------|
-| `FlightNumber` | String | Yes | Flight identifier (e.g., AI101, 6E234) |
-| `Airline` | String | Yes | Airline code or name |
-| `Scheduled_Departure` | DateTime | Yes | Scheduled departure time |
-| `Scheduled_Arrival` | DateTime | Yes | Scheduled arrival time |
-| `Actual_Departure` | DateTime | No | Actual departure time |
-| `Actual_Arrival` | DateTime | No | Actual arrival time |
-| `Runway` | String | No | Runway identifier |
-| `Origin` | String | Yes | Origin airport code |
-| `Destination` | String | Yes | Destination airport code |
-| `Delay_Minutes` | Numeric | No | Computed if missing |
+Erro de versão do Python → confirme python --version dentro do env flight-env.
 
-### Intelligent Data Transformer
+Se o app não abrir no browser → abra manualmente http://localhost:8501.
 
-The system includes an intelligent data transformer that:
+Dependências conflitantes → recrie o ambiente: conda remove -n flight-env --all e refaça os passos.
 
-- **Auto-detects** common column names and maps them to canonical names
-- **Parses** multiple datetime formats automatically
-- **Computes** delay minutes when actual times are available
-- **Fills** missing required columns where possible
-- **Reports** unmappable columns for manual review
+Se estiver usando macOS/Linux, troque cd Desktop/"AeroSense AI" por cd ~/Desktop/AeroSense\ AI ou o caminho onde clonou o repo.
 
-Upload any Excel/CSV file through the dashboard - the transformer will handle format conversion automatically.
-
-## 🤖 AI Integration
-
-### Google Gemini AI
-
-The application supports Google Generative AI (Gemini) for intelligent insights:
-
-1. **API Key Setup**: Set your API key in the `.env` file:
-   ```env
-   GEMINI_API_KEY=your_api_key_here
-   ```
-
-2. **Response Format**: The system is configured for concise metric responses by default
-
-3. **Common Issues**:
-   - **404 models/gemini-pro**: Update model name in `app/main.py` to `gemini-1.5-flash` or `gemini-1.5-pro`
-   - **Rate Limits**: The system gracefully falls back to local analysis mode
-
-### Fallback Mode
-
-When AI services are unavailable, the system provides:
-
-- Built-in recommendation engine
-- Local statistical analysis
-- Basic optimization algorithms
-
-## 📖 How to Use
-
-### Main Features
-
-1. **Upload Data**: Use the sidebar file upload to import Excel/CSV files
-2. **Review Mapping**: Check the intelligent transformation preview
-3. **Apply Filters**: Filter by airport, date range, airline, etc.
-4. **Get AI Insights**: Click quick-action buttons for optimization, risk, and revenue analysis
-5. **Schedule Tuning**: Use the simulator to test alternate schedules
-6. **Export Results**: Download optimized schedules and analysis reports
-
-### Dashboard Navigation
-
-- **📊 Dashboard**: Overview of flight operations and key metrics
-- **🔧 Optimization & AI**: Schedule optimization and AI-powered insights  
-- **🔍 Query Interface**: Natural language queries for operational questions
-- **📈 Analytics**: Detailed performance analytics and predictions
-- **⚙️ Advanced**: ML models, anomaly detection, and cascade analysis
-
-## 🔧 Troubleshooting
-
-### Common Issues
-
-- **Streamlit won't start**: Ensure virtual environment is activated and dependencies installed
-- **Large file hangs**: Use smaller data samples for initial testing
-- **AI responses too long**: Adjust prompt settings in `app/main.py`
-- **Missing packages**: Run `pip install -r requirements.txt` again
-- **Memory issues**: Increase system memory or reduce dataset size
-
-### Performance Tips
-
-- Use data filtering to reduce processing load
-- Enable caching for repeated operations
-- Close unused browser tabs when running large analyses
-
-## 🧪 Development
-
-### Setting Up Development Environment
-
-```bash
-# Install development dependencies
+🧪 Executando em Linux / macOS (atalho)
+git clone <URL-do-repo> "AeroSense AI" && cd "AeroSense AI"
+conda create -n flight-env python=3.10 -y && conda activate flight-env
 pip install -r requirements.txt
-pip install pytest black flake8 mypy
+cd app && streamlit run main.py
 
-# Run tests
-pytest src/
+📚 Como usar o dashboard
 
-# Code formatting
-black src/ app/
+Upload Data — carregue CSV/XLSX pela barra lateral.
 
-# Linting
-flake8 src/ app/
-```
+Optimization & AI — rode o pipeline de pré-processamento e otimização.
 
-### Project Architecture
+Query (NLP) — pergunte ao sistema em linguagem natural (ex.: “quais são os horários de pico amanhã?”).
 
-- **Data Layer**: `src/data_processor.py` handles data ingestion and transformation
-- **ML Layer**: `src/predictor.py`, `src/anomaly_detector.py` for predictive analytics
-- **Optimization Layer**: `src/optimizer.py`, `src/advanced_optimizer.py` for scheduling
-- **UI Layer**: `app/main.py` Streamlit dashboard
-- **AI Layer**: NLP processing and Gemini integration
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-### Contribution Guidelines
-
-- Keep changes focused and well-documented
-- Add tests for new functionality
-- Follow existing code style and conventions
-- Update documentation for new features
-
-## 📄 License
-
-This project is licensed under the MIT License - see the `LICENSE` file for details.
-
-## 🔗 References & Data Sources
-
-- **FlightRadar24**: [https://www.flightradar24.com](https://www.flightradar24.com)
-- **FlightAware**: [https://www.flightaware.com](https://www.flightaware.com)
-- **Mumbai Airport (BOM)**: [https://www.flightradar24.com/data/airports/bom](https://www.flightradar24.com/data/airports/bom)
-- **Delhi Airport (DEL)**: [https://www.flightradar24.com/data/airports/del](https://www.flightradar24.com/data/airports/del)
-
-## 🏆 Hackathon Submission
-
-This project addresses the Honeywell Hackathon challenge for flight schedule optimization by:
-
-1. ✅ **Analyzing flight data** from busy airports using open-source AI tools
-2. ✅ **Finding optimal takeoff/landing times** through scheduled vs actual time analysis
-3. ✅ **Identifying busiest time slots** to avoid congestion
-4. ✅ **Providing schedule tuning models** with delay impact visualization
-5. ✅ **Isolating high-impact flights** that cause cascading delays
-6. ✅ **Offering NLP interface** for natural language queries
-
----
-
-**Built with ❤️ for airline operations teams**
-=======
-
-
+Visualize — painéis interativos mostrarão janelas críticas, previsões e recomendações.
