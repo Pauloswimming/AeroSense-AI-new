@@ -158,29 +158,28 @@ O aplicativo espera dados de programação de voos com as seguintes colunas:
 #### Transformador de Dados Inteligente
 O sistema inclui um transformador de dados inteligente que:
 
--Detecta automaticamente nomes de colunas comuns e os mapeia para nomes canônicos.
--Analisa automaticamente vários formatos de data e hora.
--Calcula os minutos de atraso quando os horários reais estão disponíveis.
--Preenche colunas obrigatórias ausentes sempre que possível.
--Relata colunas não mapeáveis ​​para revisão manual.
+- **Detecta automaticamente** nomes de colunas comuns e os mapeia para nomes canônicos
+- **Analisa** automaticamente vários formatos de data e hora
+- **Calcula** os minutos de atraso quando os horários reais estão disponíveis
+- **Preenche** colunas obrigatórias ausentes sempre que possível
+- **Relata** colunas não mapeáveis para revisão manual
 
 #### Faça o upload de qualquer arquivo Excel/CSV pelo painel de controle — o transformador cuidará da conversão de formato automaticamente.
 
 ## 📖 Como usar
 #### Principais recursos
--Carregar dados: Use o recurso de carregamento de arquivos na barra lateral para -importar arquivos Excel/CSV
--Revisar mapeamento: Confira a pré-visualização da transformação inteligente
--Aplicar filtros: Filtre por aeroporto, intervalo de datas, companhia aérea etc.
--Obter insights de IA: Clique nos botões de ação rápida para otimização, análise de risco e receita
--Ajuste de horários: Use o simulador para testar horários alternativos
--Exportar resultados: Baixe horários otimizados e relatórios de análise
+- **Carregar dados**: Use o recurso de carregamento de arquivos na barra lateral para importar arquivos Excel/CSV
+- **Revisar mapeamento**: Confira a pré-visualização da transformação inteligente
+- **Aplicar filtros**: Filtre por aeroporto, intervalo de datas, companhia aérea etc.
+- **Obter insights de IA**: Clique nos botões de ação rápida para otimização, análise de risco e receita
+- **Ajuste de horários**: Use o simulador para testar horários alternativos
+- **Exportar resultados**: Baixe horários otimizados e relatórios de análise
 #### Navegação do painel
--📊 Painel: Visão geral das operações de voo e principais métricas
--🔧 Otimização e IA: Otimização de horários e insights com tecnologia de IA
--🔍 Interface de consulta: Consultas em linguagem natural para perguntas operacionais
--📈 Análises: Análises de desempenho detalhadas e previsões
--⚙️ Avançado: Modelos de aprendizado de máquina, detecção de anomalias e análise em cascata
-
+- **📊 Painel**: Visão geral das operações de voo e principais métricas
+- **🔧 Otimização e IA**: Otimização de horários e insights com tecnologia de IA
+- **🔍 Interface de consulta**: Consultas em linguagem natural para perguntas operacionais
+- **📈 Análises**: Análises de desempenho detalhadas e previsões
+- **⚙️ Avançado**: Modelos de aprendizado de máquina, detecção de anomalias e análise em cascata
 ### 📂 Upload Data — carregue CSV/XLSX pela barra lateral.
 
 ### ⚙️ Optimization & AI — rode o pipeline de otimização e previsão.
@@ -197,6 +196,7 @@ Fork → 2. git checkout -b feature-nome → 3. Commit & Push → 4. Abra PR.
 ## 🧑‍💻 Autor
 
 👨‍💻 Paulo Henrique Rodrigues Nogueira
+
 📧 Email: paulocontaoficialph@gmail.com
 
 💼 GitHub: Pauloswimming
