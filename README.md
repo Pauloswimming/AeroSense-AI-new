@@ -138,32 +138,33 @@ conda create -n flight-env python=3.10 -y && conda activate flight-env &&
 pip install -r requirements.txt && cd app && streamlit run main.py
 ```
 ### 📊 Data Format & Intelligent Transformer
-```
-Formato de dados esperado
+# Formato de Dados Esperado
+
 O aplicativo espera dados de programação de voos com as seguintes colunas:
 
-Column	Type	Required	Description
-FlightNumber	String	Yes	Flight identifier (e.g., AI101, 6E234)
-Airline	String	Yes	Airline code or name
-Scheduled_Departure	DateTime	Yes	Scheduled departure time
-Scheduled_Arrival	DateTime	Yes	Scheduled arrival time
-Actual_Departure	DateTime	No	Actual departure time
-Actual_Arrival	DateTime	No	Actual arrival time
-Runway	String	No	Runway identifier
-Origin	String	Yes	Origin airport code
-Destination	String	Yes	Destination airport code
-Delay_Minutes	Numeric	No	Computed if missing
-```
-Transformador de Dados Inteligente
+| Coluna | Tipo | Obrigatório | Descrição |
+|---|---|---|---|
+| FlightNumber | String | Sim | Identificador do voo (ex: AI101, 6E234) |
+| Airline | String | Sim | Código ou nome da companhia aérea |
+| Scheduled_Departure | DateTime | Sim | Horário de partida programado |
+| Scheduled_Arrival | DateTime | Sim | Horário de chegada programado |
+| Actual_Departure | DateTime | Não | Horário real de partida |
+| Actual_Arrival | DateTime | Não | Horário real de chegada |
+| Runway | String | Não | Identificador da pista |
+| Origin | String | Sim | Código do aeroporto de origem |
+| Destination | String | Sim | Código do aeroporto de destino |
+| Delay_Minutes | Numérico | Não | Calculado se estiver faltando |
+
+#### Transformador de Dados Inteligente
 O sistema inclui um transformador de dados inteligente que:
 
-Detecta automaticamente nomes de colunas comuns e os mapeia para nomes canônicos.
-Analisa automaticamente vários formatos de data e hora.
-Calcula os minutos de atraso quando os horários reais estão disponíveis.
-Preenche colunas obrigatórias ausentes sempre que possível.
-Relata colunas não mapeáveis ​​para revisão manual.
+-Detecta automaticamente nomes de colunas comuns e os mapeia para nomes canônicos.
+-Analisa automaticamente vários formatos de data e hora.
+-Calcula os minutos de atraso quando os horários reais estão disponíveis.
+-Preenche colunas obrigatórias ausentes sempre que possível.
+-Relata colunas não mapeáveis ​​para revisão manual.
 
-Faça o upload de qualquer arquivo Excel/CSV pelo painel de controle — o transformador cuidará da conversão de formato automaticamente.
+#### Faça o upload de qualquer arquivo Excel/CSV pelo painel de controle — o transformador cuidará da conversão de formato automaticamente.
 
 ## 📖 Como usar
 #### Principais recursos
