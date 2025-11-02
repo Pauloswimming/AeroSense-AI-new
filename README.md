@@ -73,41 +73,41 @@ O **AeroSense AI** ajuda times operacionais e analistas a tomarem decisões proa
 ├── .env.example — Template de variáveis de ambiente
 └── README.md — Este arquivo ✈️
 ```
-⚡ Inicialização Rápida (via Conda / Windows)
+## ⚡ Inicialização Rápida (via Conda / Windows)
 
 Use o Anaconda Prompt e siga os passos abaixo:
 
-1️⃣ Clonar o repositório
+### 1️⃣ Clonar o repositório
 ```bash
 git clone https://github.com/Pauloswimming/AeroSense-AI-new.git
 cd AeroSense-AI-new
 ```
 
-2️⃣ Criar e ativar o ambiente Conda
+### 2️⃣ Criar e ativar o ambiente Conda
 ```
 conda create --name flight-env python=3.10 -y
 conda activate flight-env
 ```
 
-3️⃣ Instalar dependências
+### 3️⃣ Instalar dependências
 ```
 pip install -r requirements.txt
 ```
 
-4️⃣ Executar o app Streamlit
+### 4️⃣ Executar o app Streamlit
 ```bash
 cd app
 streamlit run main.py
 ```
 
-Exemplo no terminal:
+### Exemplo no terminal:
 ```bash
 (base) C:\Users\SONY VAIO>conda activate flight-env
 (flight-env) C:\Users\SONY VAIO>cd Desktop\AeroSense-AI-new
 (flight-env) C:\Users\SONY VAIO\Desktop\AeroSense-AI-new>cd app
 (flight-env) C:\Users\SONY VAIO\Desktop\AeroSense-AI-new\app>streamlit run main.py
 ```
-🔑 Variáveis de Ambiente
+### 🔑 Variáveis de Ambiente
 
 Crie um arquivo .env na raiz do projeto e adicione suas chaves (não comite esse arquivo):
 ```
@@ -116,44 +116,88 @@ OPENAI_API_KEY=seu_openai_api_key_aqui  # opcional
 OUTROS_SEGREDOS=valor
 ```
 
-Use .env.example como referência.
+### Use .env.example como referência.
 
-🧩 Dicas e Soluções Rápidas
+### 🧩 Dicas e Soluções Rápidas
 
-⚠️ Erro “streamlit not found” → pip install streamlit no ambiente flight-env.
+### ⚠️ Erro “streamlit not found” → pip install streamlit no ambiente flight-env.
 
-🧠 Versão incorreta do Python → python --version.
+### 🧠 Versão incorreta do Python → python --version.
 
-🌐 App não abriu automaticamente → acesse http://localhost:8501.
+### 🌐 App não abriu automaticamente → acesse http://localhost:8501.
 
-🔄 Ambiente corrompido → recrie com:
+### 🔄 Ambiente corrompido → recrie com:
 ```
 conda remove -n flight-env --all
 conda create -n flight-env python=3.10
 ```
-🧪 Execução em Linux / macOS (atalho único)
+### 🧪 Execução em Linux / macOS (atalho único)
 ```
 git clone https://github.com/Pauloswimming/AeroSense-AI.git && cd "AeroSense AI" &&
 conda create -n flight-env python=3.10 -y && conda activate flight-env &&
 pip install -r requirements.txt && cd app && streamlit run main.py
 ```
-📊 Como Usar o Dashboard
+### 📊 Data Format & Intelligent Transformer
+```
+Formato de dados esperado
+O aplicativo espera dados de programação de voos com as seguintes colunas:
 
-📂 Upload Data — carregue CSV/XLSX pela barra lateral.
+Column	Type	Required	Description
+FlightNumber	String	Yes	Flight identifier (e.g., AI101, 6E234)
+Airline	String	Yes	Airline code or name
+Scheduled_Departure	DateTime	Yes	Scheduled departure time
+Scheduled_Arrival	DateTime	Yes	Scheduled arrival time
+Actual_Departure	DateTime	No	Actual departure time
+Actual_Arrival	DateTime	No	Actual arrival time
+Runway	String	No	Runway identifier
+Origin	String	Yes	Origin airport code
+Destination	String	Yes	Destination airport code
+Delay_Minutes	Numeric	No	Computed if missing
+```
+Transformador de Dados Inteligente
+O sistema inclui um transformador de dados inteligente que:
 
-⚙️ Optimization & AI — rode o pipeline de otimização e previsão.
+Detecta automaticamente nomes de colunas comuns e os mapeia para nomes canônicos.
+Analisa automaticamente vários formatos de data e hora.
+Calcula os minutos de atraso quando os horários reais estão disponíveis.
+Preenche colunas obrigatórias ausentes sempre que possível.
+Relata colunas não mapeáveis ​​para revisão manual.
 
-💬 Query (NLP) — pergunte ao sistema: “Quais são os horários de pico amanhã?”
+Faça o upload de qualquer arquivo Excel/CSV pelo painel de controle — o transformador cuidará da conversão de formato automaticamente.
 
-📈 Visualize — painéis interativos mostram previsões, gargalos e recomendações.
+## 📖 Como usar
+#### Principais recursos
+-Carregar dados: Use o recurso de carregamento de arquivos na barra lateral para -importar arquivos Excel/CSV
+-Revisar mapeamento: Confira a pré-visualização da transformação inteligente
+-Aplicar filtros: Filtre por aeroporto, intervalo de datas, companhia aérea etc.
+-Obter insights de IA: Clique nos botões de ação rápida para otimização, análise de risco e receita
+-Ajuste de horários: Use o simulador para testar horários alternativos
+-Exportar resultados: Baixe horários otimizados e relatórios de análise
+#### Navegação do painel
+-📊 Painel: Visão geral das operações de voo e principais métricas
+-🔧 Otimização e IA: Otimização de horários e insights com tecnologia de IA
+-🔍 Interface de consulta: Consultas em linguagem natural para perguntas operacionais
+-📈 Análises: Análises de desempenho detalhadas e previsões
+-⚙️ Avançado: Modelos de aprendizado de máquina, detecção de anomalias e análise em cascata
 
-🌟 Contribuições
+### 📂 Upload Data — carregue CSV/XLSX pela barra lateral.
+
+### ⚙️ Optimization & AI — rode o pipeline de otimização e previsão.
+
+### 💬 Query (NLP) — pergunte ao sistema: “Quais são os horários de pico amanhã?”
+
+### 📈 Visualize — painéis interativos mostram previsões, gargalos e recomendações.
 
 Pull Requests são bem-vindos!
 Fluxo sugerido:
 
 Fork → 2. git checkout -b feature-nome → 3. Commit & Push → 4. Abra PR.
 
-🧑‍💻 Autor
+## 🧑‍💻 Autor
 
 👨‍💻 Paulo Henrique Rodrigues Nogueira
+📧 Email: paulocontaoficialph@gmail.com
+
+💼 GitHub: Pauloswimming
+
+## ✈️ Otimizando o futuro da aviação, um voo de cada vez!
