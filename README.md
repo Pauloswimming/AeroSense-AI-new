@@ -79,8 +79,8 @@ Use o Anaconda Prompt e siga os passos abaixo:
 
 1️⃣ Clonar o repositório
 ```bash
-git clone https://github.com/Pauloswimming/AeroSense-AI.git
-cd "AeroSense AI"
+git clone https://github.com/Pauloswimming/AeroSense-AI-new.git
+cd AeroSense-AI-new
 ```
 
 2️⃣ Criar e ativar o ambiente Conda
@@ -103,9 +103,9 @@ streamlit run main.py
 Exemplo no terminal:
 ```bash
 (base) C:\Users\SONY VAIO>conda activate flight-env
-(flight-env) C:\Users\SONY VAIO>cd Desktop\AeroSense AI
-(flight-env) C:\Users\SONY VAIO\Desktop\AeroSense AI>cd app
-(flight-env) C:\Users\SONY VAIO\Desktop\AeroSense AI\app>streamlit run main.py
+(flight-env) C:\Users\SONY VAIO>cd Desktop\AeroSense-AI-new
+(flight-env) C:\Users\SONY VAIO\Desktop\AeroSense-AI-new>cd app
+(flight-env) C:\Users\SONY VAIO\Desktop\AeroSense-AI-new\app>streamlit run main.py
 ```
 🔑 Variáveis de Ambiente
 
